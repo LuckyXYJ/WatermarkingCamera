@@ -26,7 +26,10 @@
     
     _cameraView = [[XZCameraView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     
-    
+    __weak typeof(self) wSelf = self;
+    _cameraView.onBack = ^(NSDictionary * _Nonnull dict) {
+        [wSelf dismissViewControllerAnimated:YES completion:nil];
+    };
     self.view = _cameraView;
 }
 
