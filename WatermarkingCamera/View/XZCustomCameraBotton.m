@@ -44,7 +44,7 @@
     
     iconView.frame = CGRectMake((frame.size.width - (isBig?66:30))/2, isBig?0:15, isBig?66:30, isBig?66:30);
     
-    nameLabel.frame = CGRectMake(0, isBig?76:38, frame.size.width, 18);
+    nameLabel.frame = CGRectMake(0, isBig?76:53, frame.size.width, 18);
 }
 
 - (void)changeImage:(NSString *)imageName {
