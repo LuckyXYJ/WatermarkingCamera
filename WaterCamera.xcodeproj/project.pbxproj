@@ -94,8 +94,6 @@
 				3026CBD229B08F63004A6D2A /* XZCustomCameraBotton.m */,
 				3026CBE029B094E3004A6D2A /* XZCustomCameraWaterView.h */,
 				3026CBE129B094E3004A6D2A /* XZCustomCameraWaterView.m */,
-				3026CBE629B09719004A6D2A /* UIView+XZAdditions.h */,
-				3026CBE729B09719004A6D2A /* UIView+XZAdditions.m */,
 				307E22FA29B37E0500BF6E43 /* XZCustomWaterTopView.h */,
 				307E22FB29B37E0500BF6E43 /* XZCustomWaterTopView.m */,
 				307E22FD29B37EB300BF6E43 /* XZCustomWaterContentView.h */,
@@ -126,6 +124,8 @@
 		3026CBEC29B0997B004A6D2A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3026CBE629B09719004A6D2A /* UIView+XZAdditions.h */,
+				3026CBE729B09719004A6D2A /* UIView+XZAdditions.m */,
 				307E230329B3820400BF6E43 /* NSDate+Utilities.h */,
 				307E230429B3820400BF6E43 /* NSDate+Utilities.m */,
 				3026CBE929B09976004A6D2A /* XZSystemUtil.h */,
