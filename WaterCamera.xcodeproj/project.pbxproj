@@ -14,6 +14,7 @@
 		3026CBDF29B09481004A6D2A /* SignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3026CBDD29B09481004A6D2A /* SignatureView.m */; };
 		3026CBE229B094E3004A6D2A /* XZCustomCameraWaterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3026CBE129B094E3004A6D2A /* XZCustomCameraWaterView.m */; };
 		3026CBE829B09719004A6D2A /* UIView+XZAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3026CBE729B09719004A6D2A /* UIView+XZAdditions.m */; };
+		3026CBEB29B09976004A6D2A /* XZSystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3026CBEA29B09976004A6D2A /* XZSystemUtil.m */; };
 		302E347729AF546600BBD66F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 302E347629AF546600BBD66F /* AppDelegate.m */; };
 		302E347A29AF546600BBD66F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 302E347929AF546600BBD66F /* SceneDelegate.m */; };
 		302E347D29AF546600BBD66F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302E347C29AF546600BBD66F /* ViewController.m */; };
@@ -40,6 +41,8 @@
 		3026CBE129B094E3004A6D2A /* XZCustomCameraWaterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZCustomCameraWaterView.m; sourceTree = "<group>"; };
 		3026CBE629B09719004A6D2A /* UIView+XZAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XZAdditions.h"; sourceTree = "<group>"; };
 		3026CBE729B09719004A6D2A /* UIView+XZAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XZAdditions.m"; sourceTree = "<group>"; };
+		3026CBE929B09976004A6D2A /* XZSystemUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZSystemUtil.h; sourceTree = "<group>"; };
+		3026CBEA29B09976004A6D2A /* XZSystemUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZSystemUtil.m; sourceTree = "<group>"; };
 		302E347229AF546600BBD66F /* WaterCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		302E347529AF546600BBD66F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		302E347629AF546600BBD66F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,6 +101,13 @@
 			path = SignatureView;
 			sourceTree = "<group>";
 		};
+		3026CBEC29B0997B004A6D2A /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		302E346929AF546600BBD66F = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,9 @@
 		302E348E29AF561900BBD66F /* WatermarkingCamera */ = {
 			isa = PBXGroup;
 			children = (
+				3026CBEC29B0997B004A6D2A /* Tools */,
+				3026CBE929B09976004A6D2A /* XZSystemUtil.h */,
+				3026CBEA29B09976004A6D2A /* XZSystemUtil.m */,
 				3026CBD929B09481004A6D2A /* SignatureView */,
 				3026CBD529B0924A004A6D2A /* Resource */,
 				3026CBD029B08F46004A6D2A /* View */,
@@ -232,6 +245,7 @@
 				302E348829AF546800BBD66F /* main.m in Sources */,
 				302E347A29AF546600BBD66F /* SceneDelegate.m in Sources */,
 				3026CBDE29B09481004A6D2A /* XZSignatureViewController.m in Sources */,
+				3026CBEB29B09976004A6D2A /* XZSystemUtil.m in Sources */,
 				3026CBD329B08F63004A6D2A /* XZCustomCameraBotton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
