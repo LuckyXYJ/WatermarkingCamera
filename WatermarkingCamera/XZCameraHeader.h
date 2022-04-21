@@ -10,6 +10,10 @@
 
 #import "UIView+XZAdditions.h"
 
+#define XZAPPLICATIONFRAME [[UIScreen mainScreen]bounds]//程序可用窗口frame（不含状态栏）
+#define XZSCREEN_WIDTH APPLICATIONFRAME.size.width //屏幕宽度
+#define XZSCREEN_HEIGHT APPLICATIONFRAME.size.height //屏幕高度
+
 #define WS(wSelf,self)  __weak typeof(self) wSelf = self
 #define SS(sSelf,wSelf) __strong typeof(wSelf) sSelf = wSelf
 

@@ -48,7 +48,6 @@ NS_ASSUME_NONNULL_BEGIN
 // 聚焦按钮
 @property (nonatomic, strong) UIImageView   *focusView;
 
-
 @property (nonatomic, assign) BOOL      isHiddenFlashButtons;
 
 /// 是否开启绘制，默认关闭

@@ -6,8 +6,13 @@
 //
 
 #import "WCViewController.h"
+#import "CustomCameraView.h"
+#import "XZCameraHeader.h"
 
-@interface WCViewController ()
+@interface WCViewController()
+
+//@property (nonatomic, strong) CustomCameraView *cameraView;
+@property (nonatomic, strong) CustomCameraView *cameraView;
 
 @end
 
@@ -19,6 +24,7 @@
     
     self.view.backgroundColor = [UIColor yellowColor];
     
+    _cameraView = [[CustomCameraView alloc]initWithFrame:CGRectMake(0, 0, XZSCREEN_WIDTH, XZSCREEN_HEIGHT)];
 }
 
 /*
