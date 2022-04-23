@@ -12,4 +12,7 @@
 
 + (void)saveImageToAlbum:(UIImage *)image completionHandler:(nullable void(^)(BOOL success, NSError *__nullable error))completionHandler;
 
++ (BOOL)cameraAuthority;
+
++ (void)showCameraAuthorityRequest:(NSString *)message withBlock:(void (^)(void))backBlock;
 @end

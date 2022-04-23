@@ -11,8 +11,8 @@
 
 @interface WCViewController()
 
-//@property (nonatomic, strong) CustomCameraView *cameraView;
 @property (nonatomic, strong) CustomCameraView *cameraView;
+//@property (nonatomic, strong) CustomCameraView *cameraView;
 
 @end
 
@@ -22,9 +22,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor yellowColor];
+//    self.view.backgroundColor = [UIColor yellowColor];
     
-    _cameraView = [[CustomCameraView alloc]initWithFrame:CGRectMake(0, 0, XZSCREEN_WIDTH, XZSCREEN_HEIGHT)];
+    _cameraView = [[CustomCameraView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    self.view = _cameraView;
 }
 
 /*

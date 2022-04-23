@@ -23,6 +23,7 @@
 		302E348529AF546800BBD66F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302E348329AF546800BBD66F /* LaunchScreen.storyboard */; };
 		302E348829AF546800BBD66F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 302E348729AF546800BBD66F /* main.m */; };
 		302E349129AF56CE00BBD66F /* WCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302E349029AF56CE00BBD66F /* WCViewController.m */; };
+		307E22F929B378D100BF6E43 /* XZCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 307E22F829B378D100BF6E43 /* XZCameraView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,8 @@
 		302E348729AF546800BBD66F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		302E348F29AF56CE00BBD66F /* WCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCViewController.h; sourceTree = "<group>"; };
 		302E349029AF56CE00BBD66F /* WCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCViewController.m; sourceTree = "<group>"; };
+		307E22F729B378D100BF6E43 /* XZCameraView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZCameraView.h; sourceTree = "<group>"; };
+		307E22F829B378D100BF6E43 /* XZCameraView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZCameraView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,8 @@
 				3026CBCE29B08E14004A6D2A /* CustomCameraView.m */,
 				3026CBD629B093B4004A6D2A /* XZCustomCameraEditImageView.h */,
 				3026CBD729B093B4004A6D2A /* XZCustomCameraEditImageView.m */,
+				307E22F729B378D100BF6E43 /* XZCameraView.h */,
+				307E22F829B378D100BF6E43 /* XZCameraView.m */,
 			);
 			path = WatermarkingCamera;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				302E347729AF546600BBD66F /* AppDelegate.m in Sources */,
 				3026CBDF29B09481004A6D2A /* SignatureView.m in Sources */,
 				302E348829AF546800BBD66F /* main.m in Sources */,
+				307E22F929B378D100BF6E43 /* XZCameraView.m in Sources */,
 				302E347A29AF546600BBD66F /* SceneDelegate.m in Sources */,
 				3026CBDE29B09481004A6D2A /* XZSignatureViewController.m in Sources */,
 				3026CBEB29B09976004A6D2A /* XZSystemUtil.m in Sources */,
