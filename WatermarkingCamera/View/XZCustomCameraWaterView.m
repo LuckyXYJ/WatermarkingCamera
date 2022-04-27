@@ -8,6 +8,7 @@
 #import "XZCustomCameraWaterView.h"
 #import "XZCustomWaterTopView.h"
 #import "XZCustomWaterContentView.h"
+#import "XZCameraHeader.h"
 
 @interface XZCustomCameraWaterView()
 
@@ -31,7 +32,7 @@
 
 - (void)ui_config {
 
-    self.backgroundColor = [UIColor XZ_colorWithHexString:@"#33333328"];
+    self.backgroundColor = XZRGBACOLOR(0x333333, 0.4);
     
     XZCustomWaterTopView *topView = [[XZCustomWaterTopView alloc]init];
     [self addSubview:topView];
@@ -64,7 +65,7 @@
     
     NSDictionary *dict = (NSDictionary *)detail;
     
-    self.backgroundColor = [UIColor XZ_colorWithHexString:isNormer?@"#213979":@"#3333334E"];
+    self.backgroundColor = XZRGBCOLOR(isNormer?0x213979:0x3333334E);
     
     self.topView.frame = CGRectMake(0, 0, self.width, 33);
     [self.topView showViewData:(NSDictionary *)detail];
