@@ -19,7 +19,7 @@
 #define CameraBottowHeight (kSaveBottomSpace + 156)
 
 #define CameraWidth SCREEN_WIDTH
-#define CameraHeight (SCREEB_HEIGHT - CameraTopHeight - CameraBottowHeight)
+#define CameraHeight (SCREEN_HEIGHT - CameraTopHeight - CameraBottowHeight)
 
 @interface XZCameraView()<UIGestureRecognizerDelegate>
 
@@ -566,7 +566,7 @@
     
     [self.preview changeImageViewFrameIfNeeded:self.deviceOrientation];
     [self.preview showPreEditImage:self.originalImage];
-    [self.preview changeViewStatus:JYBCameraPreviewStatusEdit];
+    [self.preview changeViewStatus:XZCameraPreviewStatusEdit];
     
     self.waterView.hidden = YES;
 }
@@ -585,7 +585,7 @@
 - (void)retakeButtonClick:(id )sender{
     NSLog(@"重新拍摄");
     [self runCamera];
-    [self.preview changeViewStatus:JYBCameraPreviewStatusCustom];
+    [self.preview changeViewStatus:XZCameraPreviewStatusCustom];
     
     
     self.isOpenDraw = NO;
@@ -635,24 +635,7 @@
 /// @param sender 分享按钮
 - (void)shareImageButton:(id)sender {
     NSLog(@"分享");
-    
-    if (_onShare) {
-        UIImage *image = [self waterMarkImage:self.originalImage];
-        
-        NSString *originalImagePath = [ImageUtil getImageFilePath:self.originalImage];
-        NSString *waterMarkImagePath = [ImageUtil getImageFilePath:image];
-        
-        double currentTime =  [[NSDate date] timeIntervalSince1970];
-        NSString *strTime = [NSString stringWithFormat:@"%.0f000",currentTime];
-        
-        NSMutableDictionary *response = [[NSMutableDictionary alloc] init];
-        [response setObject:originalImagePath forKey:@"originalPath"];
-        [response setObject:waterMarkImagePath forKey:@"uri"];
-        [response setObject:waterMarkImagePath forKey:@"path"];
-        [response setObject:strTime forKey:@"lastModified"];
-        
-        _onShare(response);
-    }
+
 }
 
 /// 保存按钮
@@ -661,15 +644,9 @@
     NSLog(@"保存");
     
     UIImage *image = [self waterMarkImage:self.originalImage];
-
-    // 这里放异步执行任务代码
-    WS(wSelf, self);
-    [JYBCameraTool jyb_saveImage:image completionHandle:^(NSError *error, NSString *localIdentifier) {
-        if (error) {
-            [wSelf jyb_showToastWithText:@"保存失败，请确认是否开启相册权限"];
-        } else {
-            [wSelf jyb_showCompleteHud:@"保存成功"];
-        }
+    
+    [XZSystemUtil saveImageToAlbum:image completionHandler:^(BOOL success, NSError * _Nullable error) {
+        
     }];
 }
 
@@ -678,19 +655,7 @@
         
         UIImage *image = [self waterMarkImage:self.originalImage];
         
-        NSString *originalImagePath = [ImageUtil getImageFilePath:self.originalImage];
-        NSString *waterMarkImagePath = [ImageUtil getImageFilePath:image];
-        
-        double currentTime =  [[NSDate date] timeIntervalSince1970];
-        NSString *strTime = [NSString stringWithFormat:@"%.0f000",currentTime];
-        
-        NSMutableDictionary *response = [[NSMutableDictionary alloc] init];
-        [response setObject:originalImagePath forKey:@"originalPath"];
-        [response setObject:waterMarkImagePath forKey:@"uri"];
-        [response setObject:waterMarkImagePath forKey:@"path"];
-        [response setObject:strTime forKey:@"lastModified"];
-        
-        _onSubmit(response);
+        NSLog(@"使用照片");
     }
 }
 

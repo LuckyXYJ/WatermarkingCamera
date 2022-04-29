@@ -9,6 +9,8 @@
 #import "XZCustomWaterTopView.h"
 #import "XZCustomWaterContentView.h"
 #import "XZCameraHeader.h"
+#import "NSDictionary+XZAdditions.h"
+#import "NSDate+Utilities.h"
 
 @interface XZCustomCameraWaterView()
 
@@ -70,10 +72,10 @@
     self.topView.frame = CGRectMake(0, 0, self.width, 33);
     [self.topView showViewData:(NSDictionary *)detail];
     
-    NSString *type = [dict XZ_stringForKey:@"type"];
-    NSArray *formItems = [dict XZ_arrayForKey:@"formItem"];
-    NSArray *checkedList = [dict XZ_arrayForKey:@"checkedList"];
-    NSDictionary *data = [dict XZ_dicForKey:@"data"];
+    NSString *type = [dict xz_stringForKey:@"type"];
+    NSArray *formItems = [dict xz_arrayForKey:@"formItem"];
+    NSArray *checkedList = [dict xz_arrayForKey:@"checkedList"];
+    NSDictionary *data = [dict xz_dicForKey:@"data"];
     
     
     CGFloat top = self.topView.bottomY + 8;
@@ -83,11 +85,11 @@
     for (int i = 0; i<formItems.count; i++) {
         NSDictionary *item = formItems[i];
         
-        if ([checkedList containsObject:[item XZ_stringForKey:@"dataKey"]]) {
+        if ([checkedList containsObject:[item xz_stringForKey:@"dataKey"]]) {
             
             NSMutableDictionary *infoItem = [NSMutableDictionary dictionary];
             
-            [infoItem setObject:[item XZ_stringForKey:@"label"] forKey:@"title"];
+            [infoItem setObject:[item xz_stringForKey:@"label"] forKey:@"title"];
             
             [infoItem setObject:[self contentOfData:data withFormItem:item andType:type] forKey:@"content"];
             
@@ -133,10 +135,10 @@
 
 - (NSString *)contentOfData:(NSDictionary *)data withFormItem:(NSDictionary *)formItem andType:(NSString *)type{
     
-    NSString *comType = [formItem XZ_stringForKey:@"comType"];
-    NSString *dataKey = [formItem XZ_stringForKey:@"dataKey"];
-    NSString *nameKey = [formItem XZ_stringForKey:@"nameKey"];
-    NSString *placeholder = [formItem XZ_stringForKey:@"placeholder"];
+    NSString *comType = [formItem xz_stringForKey:@"comType"];
+    NSString *dataKey = [formItem xz_stringForKey:@"dataKey"];
+    NSString *nameKey = [formItem xz_stringForKey:@"nameKey"];
+    NSString *placeholder = [formItem xz_stringForKey:@"placeholder"];
     
     NSObject *obj = [data objectForKey:dataKey];
     if (!obj) {
@@ -144,9 +146,9 @@
     }
     
     if([comType isEqualToString:@"currentDate"]) {
-        NSString *timestamp = [data XZ_stringForKey:dataKey];
+        NSString *timestamp = [data xz_stringForKey:dataKey];
         if (timestamp.length > 0) {
-            NSDate *date = [NSDate dateWithTimestampString:[data XZ_stringForKey:dataKey]];
+            NSDate *date = [NSDate dateWithTimestampString:[data xz_stringForKey:dataKey]];
             if ([type isEqualToString:@"attendance"]) {
                 return [date stringWithFormat:@"yyyy-MM-dd"];
             }
@@ -157,7 +159,7 @@
     if ([obj isKindOfClass:[NSString class]]) {
         return (NSString*)obj;
     }else if([obj isKindOfClass:[NSDictionary class]]){
-        return [(NSDictionary *)obj XZ_stringForKey:nameKey];
+        return [(NSDictionary *)obj xz_stringForKey:nameKey];
     }else {
         return placeholder;
     }

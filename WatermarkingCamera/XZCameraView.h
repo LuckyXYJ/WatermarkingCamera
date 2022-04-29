@@ -49,6 +49,15 @@ NS_ASSUME_NONNULL_BEGIN
 //
 //@property (nonatomic, copy) RCTBubblingEventBlock onSubmit;
 
+@property(nonatomic, copy)void(^onBack)(NSDictionary *dict);
+
+@property(nonatomic, copy)void(^onWaterSelect)(NSDictionary *dict);
+
+@property(nonatomic, copy)void(^onWaterEdit)(NSDictionary *dict);
+
+@property(nonatomic, copy)void(^onShare)(NSDictionary *dict);
+
+@property(nonatomic, copy)void(^onSubmit)(NSDictionary *dict);
 
 @end
 

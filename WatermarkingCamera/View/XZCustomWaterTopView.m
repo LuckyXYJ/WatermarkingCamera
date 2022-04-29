@@ -7,6 +7,9 @@
 
 #import "XZCustomWaterTopView.h"
 #import "UIView+XZAdditions.h"
+#import "NSDictionary+XZAdditions.h"
+#import "XZCameraHeader.h"
+#import "NSDate+Utilities.h"
 
 @interface XZCustomWaterTopView()
 
@@ -53,12 +56,12 @@
 //    [target performSelector:action withObject:rnParams]
     
     // 1 图标+标题； 2 居中标题  3 居中图标  4 上下双标题  5 左右双标题
-    NSString *type = [dict jyb_stringForKey:@"type"];
+    NSString *type = [dict xz_stringForKey:@"type"];
     
     if ([type isEqualToString:@"engineering"]) {
         
         self.height = 33*scale;
-        self.backgroundColor = [UIColor jyb_colorWithHexString:@"#3A79EF"];
+        self.backgroundColor = XZRGBCOLOR(0x3A79EF);
         self.leftImageView.image = [UIImage imageNamed:@"icon_water_title_icon"];
         self.leftImageView.frame = CGRectMake(8*scale, 9*scale, 16*scale, 16*scale);
         self.leftImageView.hidden = NO;
@@ -67,7 +70,7 @@
         self.rightImageView.frame = CGRectMake(self.width - 66*scale, 7*scale, 60*scale, 26*scale);
         self.rightImageView.hidden = NO;
         
-        self.titleLabel.text = [dict jyb_stringForKey:@"title"];
+        self.titleLabel.text = [dict xz_stringForKey:@"title"];
         self.titleLabel.frame = CGRectMake(29*scale, 0, self.width - 29*scale, self.height);
         self.titleLabel.textAlignment = NSTextAlignmentLeft;
         self.titleLabel.font = [UIFont boldSystemFontOfSize:15*scale];
@@ -75,7 +78,7 @@
     }else if ([type isEqualToString:@"warning"]) {
         
         self.height = 33*scale;
-        self.backgroundColor = [UIColor jyb_colorWithHexString:@"#FF6532"];
+        self.backgroundColor = XZRGBCOLOR(0xFF6532);
         self.leftImageView.image = [UIImage imageNamed:@"icon_water_title_icon"];
         self.leftImageView.frame = CGRectMake(8*scale, 9*scale, 16*scale, 16*scale);
         self.leftImageView.hidden = NO;
@@ -84,16 +87,16 @@
         self.rightImageView.frame = CGRectMake(self.width - 66*scale, 7*scale, 60*scale, 26*scale);
         self.rightImageView.hidden = NO;
         
-        self.titleLabel.text = [dict jyb_stringForKey:@"title"];
+        self.titleLabel.text = [dict xz_stringForKey:@"title"];
         self.titleLabel.frame = CGRectMake(29*scale, 0, self.width - 29*scale, self.height);
         self.titleLabel.textAlignment = NSTextAlignmentLeft;
         self.titleLabel.font = [UIFont boldSystemFontOfSize:15*scale];
         self.titleLabel.hidden = NO;
     }else if ([type isEqualToString:@"inspection"]) {
         self.height = 33*scale;
-        self.backgroundColor = [UIColor jyb_colorWithHexString:@"#008832"];
+        self.backgroundColor = XZRGBCOLOR(0x008832);
         self.titleLabel.hidden = NO;
-        self.titleLabel.text = [dict jyb_stringForKey:@"title"];
+        self.titleLabel.text = [dict xz_stringForKey:@"title"];
         self.titleLabel.frame = CGRectMake(0, 0, self.width, self.height);
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.font = [UIFont boldSystemFontOfSize:15*scale];
@@ -106,16 +109,16 @@
         self.centerImageView.hidden = NO;
     }else if ([type isEqualToString:@"record"]) {
         self.height = 42*scale;
-        self.backgroundColor = [UIColor jyb_colorWithHexString:@"#3A79EF"];
-        self.titleLabel.text = [dict jyb_stringForKey:@"title"];
+        self.backgroundColor = XZRGBCOLOR(0x3A79EF);
+        self.titleLabel.text = [dict xz_stringForKey:@"title"];
         self.titleLabel.frame = CGRectMake(8*scale, 5*scale, self.width - 16*scale, 24*scale);
         self.titleLabel.textAlignment = NSTextAlignmentLeft;
         self.titleLabel.font = [UIFont boldSystemFontOfSize:15*scale];
         self.titleLabel.hidden = NO;
         
-        NSDictionary *data = [dict jyb_dicForKey:@"data"];
+        NSDictionary *data = [dict xz_dicForKey:@"data"];
         
-        NSDate *date = [NSDate dateWithTimestampString:[data jyb_stringForKey:@"date"]];
+        NSDate *date = [NSDate dateWithTimestampString:[data xz_stringForKey:@"date"]];
         if (!date) {
             date = [NSDate date];
         }
@@ -140,12 +143,12 @@
         self.leftBgView.frame = CGRectMake(5*scale, 3*scale, (self.width - 25*scale)/2.f, 28*scale);
         self.leftBgView.layer.cornerRadius = 6;
         self.leftBgView.layer.masksToBounds = YES;
-        self.leftLabel.text = [dict jyb_stringForKey:@"title"];
+        self.leftLabel.text = [dict xz_stringForKey:@"title"];
         self.leftLabel.frame = CGRectMake(0, 0, self.leftBgView.width, self.leftBgView.height);
         self.leftLabel.font = [UIFont boldSystemFontOfSize:15*scale];
         
-        NSDictionary *data = [dict jyb_dicForKey:@"data"];
-        NSDate *date = [NSDate dateWithTimestampString:[data jyb_stringForKey:@"date"]];
+        NSDictionary *data = [dict xz_dicForKey:@"data"];
+        NSDate *date = [NSDate dateWithTimestampString:[data xz_stringForKey:@"date"]];
         if (!date) {
             date = [NSDate date];
         }
@@ -242,7 +245,7 @@
 - (UIView *)leftBgView {
     if (!_leftBgView) {
         _leftBgView = [[UILabel alloc]init];
-        _leftBgView.backgroundColor = [UIColor jyb_colorWithHexString:@"#3A79EF"];
+        _leftBgView.backgroundColor = XZRGBCOLOR(0x3A79EF);
         [self.centerBgView addSubview:_leftBgView];
     }
     return _leftBgView;

@@ -6,6 +6,11 @@
 //
 
 #import "XZCustomWaterContentView.h"
+#import "NSDictionary+XZAdditions.h"
+#import "UIView+XZAdditions.h"
+#import "XZCameraHeader.h"
+
+
 @interface XZCustomWaterContentView()
 
 
@@ -34,15 +39,15 @@
 - (void)showViewData:(NSDictionary *)dict {
     CGFloat scale = 1;//self.width/210;
     
-    NSString *showText = [NSString stringWithFormat:@"%@：%@", [dict jyb_stringForKey:@"title"], [dict jyb_stringForKey:@"content"]];
+    NSString *showText = [NSString stringWithFormat:@"%@：%@", [dict xz_stringForKey:@"title"], [dict xz_stringForKey:@"content"]];
     self.titleLabel.attributedText = [self shadowText:showText];
-//    self.titleLabel.attributedText = [self shadowText:[dict jyb_stringForKey:@"title"]];
+//    self.titleLabel.attributedText = [self shadowText:[dict xz_stringForKey:@"title"]];
     self.titleLabel.frame = CGRectMake(8*scale, 0, self.width - 16 *scale, CGFLOAT_MAX);
     [self.titleLabel sizeToFit];
     self.titleLabel.frame = CGRectMake(8*scale, 0, self.titleLabel.width, self.titleLabel.height);
     
-//    self.contentLabel.text = [dict jyb_stringForKey:@"content"];
-//    self.contentLabel.attributedText = [self shadowText:[dict jyb_stringForKey:@"content"]];
+//    self.contentLabel.text = [dict xz_stringForKey:@"content"];
+//    self.contentLabel.attributedText = [self shadowText:[dict xz_stringForKey:@"content"]];
 ////    self.contentLabel.font = [UIFont systemFontOfSize:12*scale];
 //    self.contentLabel.frame = CGRectMake(16*scale + self.titleLabel.width, 0, self.width - (16*scale + self.titleLabel.width), CGFLOAT_MAX);
 //    [self.contentLabel sizeToFit];
@@ -80,7 +85,7 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc]init];
-        _titleLabel.textColor = [UIColor jyb_colorWithHexString:@"#FFFFFF"];
+        _titleLabel.textColor = XZRGBCOLOR(0xFFFFFF);
         _titleLabel.numberOfLines = 0;
         [self addSubview:_titleLabel];
     }
