@@ -28,6 +28,7 @@
 		307E22FF29B37EB300BF6E43 /* XZCustomWaterContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 307E22FE29B37EB300BF6E43 /* XZCustomWaterContentView.m */; };
 		307E230229B37FD300BF6E43 /* NSDictionary+XZAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 307E230129B37FD300BF6E43 /* NSDictionary+XZAdditions.m */; };
 		307E230529B3820400BF6E43 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 307E230429B3820400BF6E43 /* NSDate+Utilities.m */; };
+		307E230829B3862100BF6E43 /* Camera.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307E230729B3862100BF6E43 /* Camera.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		307E230129B37FD300BF6E43 /* NSDictionary+XZAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XZAdditions.m"; sourceTree = "<group>"; };
 		307E230329B3820400BF6E43 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
 		307E230429B3820400BF6E43 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		307E230729B3862100BF6E43 /* Camera.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Camera.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		3026CBD529B0924A004A6D2A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				307E230729B3862100BF6E43 /* Camera.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				307E230829B3862100BF6E43 /* Camera.xcassets in Resources */,
 				302E348529AF546800BBD66F /* LaunchScreen.storyboard in Resources */,
 				302E348229AF546800BBD66F /* Assets.xcassets in Resources */,
 				302E348029AF546600BBD66F /* Main.storyboard in Resources */,

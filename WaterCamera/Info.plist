@@ -21,5 +21,9 @@
 			</array>
 		</dict>
 	</dict>
+    <key>NSCameraUsageDescription</key>
+    <string>“XX”需要访问您的摄像头，以便提供拍照上传相关业务凭证或者图片等功能</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>“XX”需要访问您的相册，以便您保存图片到手机或者从相册选择图片进行上传</string>
 </dict>
 </plist>
